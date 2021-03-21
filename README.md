@@ -47,4 +47,4 @@ In the following table "I" means the sensor is internal to the USB stick and "E"
 | TEMPer2   | 413d:2107 | TEMPerX_V3.3    | I,E  |     | White plastic |
 | TEMPer1F  | 413d:2107 | TEMPerX_V3.3    | E    |     | White plastic |
 
-[Get binary](https://www.google.com)
+[Get binary](https://github.com/linuxoid69/temper_exporter/releases)
