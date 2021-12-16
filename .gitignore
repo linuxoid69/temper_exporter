@@ -1,3 +1,5 @@
-vendor/*
+vendor
 .idea
 temper_exporter
+rootfs
+target
