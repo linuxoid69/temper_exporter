@@ -1,3 +1,4 @@
+# /etc/systemd/system/temper-exporter.service
 #  This file is part of systemd.
 [Unit]
 Description=Temper exporter
@@ -9,11 +10,11 @@ Environment="TO=0"
 Environment="TF=1"
 Environment="HF=1"
 Environment="HO=0"
-EnvironmentFile=/etc/default/temper
+EnvironmentFile=-/etc/default/temper
 ExecStart=/usr/bin/temper_exporter -tf ${TF} -to ${TO} -hf ${HF} -ho ${HO}
 Type=simple
 Restart=always
-SyslogIdentifier=prometheus_node_exporter
+SyslogIdentifier=temper-exporter
 
 [Install]
 WantedBy=multi-user.target
