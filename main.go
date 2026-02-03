@@ -35,6 +35,7 @@ func init() {
 	flag.Float64Var(&ho, "ho", 0, "-ho Offset for humidity")
 	flag.Int64Var(&port, "port", 9112, "-p Listen a port")
 }
+
 func main() {
 	flag.Parse()
 
@@ -65,6 +66,10 @@ func getMetrics() {
 			if buf, err := device.Read(-1, 1*time.Second); err == nil {
 				tmp := (float64(buf[2])*256+float64(buf[3]))/100*tf + to
 				hum := (float64(buf[4])*256+float64(buf[5]))/100*hf + ho
+
+				if tmp > 50 {
+					return
+				}
 
 				temperature.Set(tmp)
 				humidity.Set(hum)
